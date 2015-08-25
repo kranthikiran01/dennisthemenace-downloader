@@ -12,6 +12,8 @@ proxies={'http':"http://172.30.0.12:3128/",'https':"https://172.30.0.12:3128/"}
 #proxies={}
 comicWebsite="http://dennisthemenace.com/comics/"
 
+if not os.path.exists("Dennis"):
+	os.makedirs("Dennis")
 day=datetime.datetime.now()
 
 print "Enter from year:"
