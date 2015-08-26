@@ -19,8 +19,8 @@ day=datetime.datetime.now()
 print "Enter from year:"
 year=int(raw_input())
 
-while day.year!=year and day.day!=1:
-	day=day-datetime.timedelta(days=1)
+while day.year!=year:
+	
 	fileHandle=urllib.urlopen(comicWebsite+str(day.strftime("%B-%d-%Y").lower()),proxies=proxies)
 
 	if fileHandle.getcode()==200:
@@ -33,6 +33,7 @@ while day.year!=year and day.day!=1:
 		print "Image saved!"
 	else:
 		print "Error 404: Image not found"
+	day=day-datetime.timedelta(days=1)
 
 print "Dennis the menace comic strips have been downloaded!"
 print "Enjoy reading the comics!"
